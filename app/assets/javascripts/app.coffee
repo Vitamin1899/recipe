@@ -1,0 +1,1 @@
+recipe = angular.module('recipe',[])
