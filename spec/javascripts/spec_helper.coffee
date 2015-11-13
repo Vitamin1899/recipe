@@ -11,8 +11,20 @@
 #
 # You can require your own javascript files here. By default this will include everything in application, however you
 # may get better load performance if you require the specific files that are being used in the spec that tests them.
+#= require support/bind-poly
 #= require application
 #= require angular-mocks/angular-mocks
+beforeEach ->
+  jasmine.addMatchers toEqualData: (util, customEqualityTesters) ->
+    {
+      compare: (actual, expected) ->
+        result = {}
+        result.pass = angular.equals(actual, expected)
+        result
+    }
+afterEach ->
+  httpBackend.verifyNoOutstandingExpectation()
+  httpBackend.verifyNoOutstandingRequest()
 #
 # Deferring execution
 # If you're using CommonJS, RequireJS or some other asynchronous library you can defer execution. Call
