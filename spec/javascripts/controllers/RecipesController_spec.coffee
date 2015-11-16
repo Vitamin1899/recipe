@@ -35,24 +35,24 @@ describe 'controller initialization', ->
     it 'defaults to no recipes', ->
         expect(scope.recipes).toEqualData([])
 
-describe 'with keywords', ->
-  keywords = 'foo'
-  recipes = [
-    {
-      id: 2
-      name: 'Baked Potatoes'
-    },
-    {
-      id: 4
-      name: 'Potatoes Au Gratin'
-    }
-  ]
-  beforeEach ->
-    setupController(keywords,recipes)
-    httpBackend.flush()
+  describe 'with keywords', ->
+    keywords = 'foo'
+    recipes = [
+      {
+        id: 2
+        name: 'Baked Potatoes'
+      },
+      {
+        id: 4
+        name: 'Potatoes Au Gratin'
+      }
+    ]
+    beforeEach ->
+      setupController(keywords,recipes)
+      httpBackend.flush()
 
-  it 'calls the back-end', ->
-    expect(scope.recipes).toEqualData(recipes)
+    it 'calls the back-end', ->
+      expect(scope.recipes).toEqualData(recipes)
 
 describe 'search()', ->
   beforeEach ->
