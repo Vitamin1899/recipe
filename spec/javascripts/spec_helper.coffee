@@ -22,9 +22,6 @@ beforeEach ->
         result.pass = angular.equals(actual, expected)
         result
     }
-afterEach ->
-  httpBackend.verifyNoOutstandingExpectation()
-  httpBackend.verifyNoOutstandingRequest()
 #
 # Deferring execution
 # If you're using CommonJS, RequireJS or some other asynchronous library you can defer execution. Call

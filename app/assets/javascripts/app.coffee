@@ -11,6 +11,9 @@ recipe.config([ '$routeProvider',
       .when('/',
         templateUrl: "index.html"
         controller: 'RecipesController'
+      ).when('/recipes/:recipeId',
+        templateUrl: "show.html"
+        controller: 'RecipeController'
       )
 ])
 

@@ -63,3 +63,7 @@ describe 'search()', ->
     scope.search(keywords)
     expect(location.path()).toBe('/')
     expect(location.search()).toEqualData({keywords: keywords})
+
+afterEach ->
+  httpBackend.verifyNoOutstandingExpectation()
+  httpBackend.verifyNoOutstandingRequest()
