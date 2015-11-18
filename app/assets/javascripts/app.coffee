@@ -3,6 +3,8 @@ recipe = angular.module('recipe',[
   'ngRoute',
   'ngResource',
   'controllers',
+  'angular-flash.service',
+  'angular-flash.flash-alert-directive'
 ])
 
 recipe.config([ '$routeProvider',
