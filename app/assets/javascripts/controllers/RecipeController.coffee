@@ -11,4 +11,6 @@ controllers.controller("RecipeController", [ '$scope', '$routeParams', '$resourc
       )
     )
 
+    $scope.back = -> $location.path("/")
+
 ])
