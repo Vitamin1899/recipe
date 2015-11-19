@@ -6,4 +6,8 @@ class FormulasController < ApplicationController
                  []
                end
   end
+
+  def show
+    @formula = Formula.find(params[:id])
+  end
 end

@@ -42,4 +42,30 @@ describe FormulasController do
     end
 
   end
+
+  describe "show" do
+    before do
+      xhr :get, :show, format: :json, id: formula_id
+    end
+
+    subject(:results) { JSON.parse(response.body) }
+
+    context "when the formula exists" do
+      let(:formula) {
+        Formula.create!(name: 'Baked Potato w/ Cheese',
+               instructions: "Nuke for 20 minutes; top with cheese")
+      }
+      let(:formula_id) { formula.id }
+
+      it { expect(response.status).to eq(200) }
+      it { expect(results["id"]).to eq(formula.id) }
+      it { expect(results["name"]).to eq(formula.name) }
+      it { expect(results["instructions"]).to eq(formula.instructions) }
+    end
+
+    context "when the formula doesn't exit" do
+      let(:formula_id) { -9999 }
+      it { expect(response.status).to eq(404) }
+    end
+  end
 end

@@ -36,6 +36,7 @@ end
 
 gem 'sass', '3.2.19'
 group :test, :development do
+  gem 'rspec-rails', '~> 3.0'
   gem 'teaspoon-jasmine'
   gem 'phantomjs'
   gem "capybara"
