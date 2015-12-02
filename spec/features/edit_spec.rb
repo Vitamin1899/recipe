@@ -3,7 +3,7 @@ require 'spec_helper.rb'
 feature "Creating, editing, and deleting a recipe", js: true do
   scenario "CRUD a recipe" do
     visit '/'
-    click_on "New Recipe…"
+    click_on "New Recipe"
 
     fill_in "name", with: "Baked Brussel Sprouts"
     fill_in "instructions", with: "Slather in oil, then bake for 20 minutes"
